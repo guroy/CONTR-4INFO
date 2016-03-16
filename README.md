@@ -13,3 +13,4 @@ Lab works using ECLIPSe prolog and ic library.
 
 Labs
 ----
+##### <a href="https://github.com/guroy/CSCI-420/tree/master/Homework_02">TP 1 - Découverte de la bibliothèque de contraintes à domaines finis</a>
