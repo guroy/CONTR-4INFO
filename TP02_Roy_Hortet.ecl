@@ -5,7 +5,7 @@
 
 %%% QUESTION 2.1
 :- local domain(color(red,green,white,yellow,blue)).
-:- local domain(country(england,spain,ukraine,japan,norway)).
+:- local domain(country(england,spain,ukrain,japan,norway)).
 :- local domain(drink(tea,milk,orangejuice,water,coffee)).
 :- local domain(pet(dog,snake,fox,horse,zebra)).
 :- local domain(car(bmw,toyota,ford,datsun,honda)).
@@ -14,11 +14,11 @@
 %%% QUESTION 2.2
 domaines_maison(m(Pays,Couleur,Boisson,Voiture,Animal,Numero)) :-
   Numero #:: 1..5,
-  Pays &:: country, ic_symbolic:indomain(Pays),
-  Couleur &:: color, ic_symbolic:indomain(Couleur),
-  Boisson &:: drink, ic_symbolic:indomain(Boisson),
-  Voiture &:: car, ic_symbolic:indomain(Voiture),
-  Animal &:: pet, ic_symbolic:indomain(Animal).
+  Pays &:: country,
+  Couleur &:: color,
+  Boisson &:: drink,
+  Voiture &:: car,
+  Animal &:: pet.
   
 
 %%% QUESTION 2.3
@@ -66,11 +66,85 @@ labeling_symbolic([Var|List]) :-
   
 %%% QUESTION 2.6
 
-resoudre(Rue) :-
-  rue(Rue),
-  getVarList(Rue, List).
+% resoude(?Rue)
+resoudre(Rue):-
+	rue(Rue),
+	getVarList(Rue,List),
+	contraintes(Rue),
+	(foreach(m(_P,C,_B,_V,_A,N),Rue), param(Rue) do
+	(
+		(foreach(m(_P1,C1,_B1,_V1,_A1,N1),Rue),
+			param(N,C) do
+			(C1 &= green) and (C &= white) => (N1 #= N+1)
+		)
+	)
+	),
+	(foreach(m(_P,_C,_B,V,_A,N),Rue), param(Rue) do
+	(
+		(foreach(m(_P1,_C1,_B1,_V1,A1,N1),Rue),
+			param(N,V) do
+			(V &= ford) and (A1 &= fox) => ((N #= N1+1) or( N #= N1-1))
+		)
+	)
+	),
+	(foreach(m(_P,_C,_B,V,_A,N),Rue), param(Rue) do
+	(
+		(foreach(m(_P1,_C1,_B1,_V1,A1,N1),Rue),
+			param(N,V) do 
+			(V &= toyota) and (A1 &= horse) => ((N #= N1+1) or( N #= N1-1))
+		)
+	)
+	),
+	(foreach(m(P,_C,_B,_V,_A,N),Rue), param(Rue) do
+	(
+		(foreach(m(_P1,C1,_B1,_V1,_A1,N1),Rue),
+			param(P,N) do
+			(P &= norway) and (C1 &= blue) => ((N #= N1+1) or( N #= N1-1))
+		)
+	)
+	),
+	labeling_symbolic(List),
+	ecrit_maisons(Rue).
 
-
+	
 %%% QUESTION 2.7
+
+contraintes(Rue) :-
+	(foreach(m(P,C,B,V,A,N),Rue) do 
+    (
+	(P &= england) #= (C &= red),		%Contrainte A
+	(P &= spain) #=  (A &= dog),       %Contrainte B
+	(C &= green) #= (B &= coffee),		%Contrainte C
+	(P &= ukrain) #= (B &= tea),		%Contrainte D
+	(V &= bmw) #= (A &= snake),		%Contrainte F
+	(C &= yellow) #= (V &= toyota),		%Contrainte G
+	(B &= milk) #= (N #= 3),		%Contrainte H
+	(P &= norway) #=(N #= 1),		%Contrainte I
+	(V &= honda) #=(B &= orangejuice),	%Contrainte L
+	(V &= datsun) #=(P &= japan)	        %Contrainte M
+    )
+).
+	
+
+%%% QUESTION 2.8
+
+/*
+
+[eclipse 54]: resoudre([A,B,C,D,F]).
+m(norway, yellow, water, toyota, fox, 1)
+m(ukrain, blue, tea, ford, horse, 2)
+m(england, red, milk, bmw, snake, 3)
+m(spain, white, orangejuice, honda, dog, 4)
+m(japan, green, coffee, datsun, zebra, 5)
+
+A = m(norway, yellow, water, toyota, fox, 1)
+B = m(ukrain, blue, tea, ford, horse, 2)
+C = m(england, red, milk, bmw, snake, 3)
+D = m(spain, white, orangejuice, honda, dog, 4)
+F = m(japan, green, coffee, datsun, zebra, 5)
+
+*/
+
+% Le zèbre est possédé par le Japonais, et le Norvégien boit de l'eau.
 
 
