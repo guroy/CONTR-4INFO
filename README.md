@@ -18,3 +18,7 @@ Labs
 ##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP02_Roy_Hortet.ecl">TP 2 - Contraintes logiques</a>
 
 ##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP03_Roy_Hortet.ecl">TP 3 - Ordonnancement de tâches sur deux machines</a>
+
+##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP04_Roy_Hortet.ecl">TP 4 - </a>
+
+##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP05_Roy_Hortet.ecl">TP 5 - </a>
