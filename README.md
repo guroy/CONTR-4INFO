@@ -22,3 +22,5 @@ Labs
 ##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP04_Roy_Hortet.ecl">TP 4 - </a>
 
 ##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP05_Roy_Hortet.ecl">TP 5 - </a>
+
+##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP06_Roy_Hortet.ecl">TP 6 - </a>
