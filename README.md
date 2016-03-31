@@ -19,8 +19,8 @@ Labs
 
 ##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP03_Roy_Hortet.ecl">TP 3 - Ordonnancement de tâches sur deux machines</a>
 
-##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP04_Roy_Hortet.ecl">TP 4 - </a>
+##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP04_Roy_Hortet.ecl">TP 4 - Les régates</a>
 
-##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP05_Roy_Hortet.ecl">TP 5 - </a>
+##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP05_Roy_Hortet.ecl">TP 5 - Contraindre puis chercher</a>
 
-##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP06_Roy_Hortet.ecl">TP 6 - </a>
+##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP06_Roy_Hortet.ecl">TP 6 - Sur une balançoire</a>
