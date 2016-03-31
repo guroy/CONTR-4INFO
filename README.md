@@ -24,3 +24,5 @@ Labs
 ##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP05_Roy_Hortet.ecl">TP 5 - Contraindre puis chercher</a>
 
 ##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP06_Roy_Hortet.ecl">TP 6 - Sur une balançoire</a>
+
+##### <a href="https://github.com/guroy/CONTR-4INFO/blob/master/TP07_Roy_Hortet.ecl">TP 7 - Les mobiles de Choco</a>
